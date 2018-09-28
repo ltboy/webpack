@@ -1,13 +1,13 @@
 'use strict'
 
-const HtmlWebpackPlugin = require('webpack-clean-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const config = require('./config');
-
+const path = require('path')
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: 'dist',
+        path: path.resolve(__dirname, '..', 'dist'),
         filename: 'js/[name][hash:6].js',
         publicPath: config.baseUrl
     },
@@ -22,16 +22,16 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                include: ['./src'],
+                include: [path.resolve(__dirname, '..', 'src')],
                 loader: 'babel-loader',
-                exclude: ['node_modules']
+                exclude: [/node_modules/]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: utils.resolve('img/[name].[hash:7].[ext]')
+                    name: 'img/[name].[hash:7].[ext]'
                 }
             },
             {
@@ -39,7 +39,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: utils.resolve('media/[name].[hash:7].[ext]')
+                    name: 'media/[name].[hash:7].[ext]'
                 }
             },
             {
@@ -47,7 +47,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: utils.resolve('fonts/[name].[hash:7].[ext]')
+                    name: 'fonts/[name].[hash:7].[ext]'
                 }
             },
         ],
@@ -56,7 +56,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'public/index.html',
-            favicon: 'public/favicon.ico',
+            BASE_URL: config.baseUrl,
             minify: {
                 minifyCSS: true,
                 minifyJS: true,
