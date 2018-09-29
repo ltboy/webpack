@@ -12,6 +12,11 @@ module.exports = merge(baseConfig, {
     module: {
         rules: [
             {
+                test:/\.jsx?$/,
+                enforce: 'pre',
+                exclude:/node_modules/,
+            },
+            {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader']
             },
