@@ -12,6 +12,12 @@ module.exports = merge(baseConfig, {
     module: {
         rules: [
             {
+              test:/\.tsx?$/,
+              loader: 'tslint-loader',
+              enforce: 'pre',
+              exclude: /node_modules/
+            },
+            {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader']
             },
