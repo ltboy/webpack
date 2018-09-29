@@ -2,8 +2,10 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const PreloadWebpackPlguin = require('preload-webpack-plugin')
 const config = require('./config');
 const path = require('path')
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -60,8 +62,16 @@ module.exports = {
             minify: {
                 minifyCSS: true,
                 minifyJS: true,
-                removeComments: true
+                collapseWhitespace: true,
             }
+        }),
+        new PreloadWebpackPlguin({
+            rel: 'preload',
+            include: 'initial',
+        }),
+        new PreloadWebpackPlguin({
+            rel: 'prefetch',
+            include: 'asyncChunks'
         }),
         CopyWebpackPlugin([
             {

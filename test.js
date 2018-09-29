@@ -1,0 +1,7 @@
+const utils = require('./build/utils')
+const http = require('http')
+let server = http.createServer()
+server.listen(0)
+console.log(server.address().port)
+server.close()
+console.log(utils.url(9000))

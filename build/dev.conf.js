@@ -4,11 +4,9 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
-// const config = require('./config.js')
+const utils = require('./utils')
 const baseConfig = require('./base.conf.js')
 
-const HOST = 'localhost'
-const PORT = 8081
 module.exports = merge(baseConfig, {
     mode: 'development',
     module: {
@@ -25,12 +23,14 @@ module.exports = merge(baseConfig, {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        // new FriendlyErrorsWebpackPlugin({
-        //     compilationSuccessInfo: {
-        //         messages: [`Your application is running here: http://${HOST}:${PORT}`],
-        //         clearConsole: true
-        //     }
-        // })
+        new FriendlyErrorsWebpackPlugin({
+            compilationSuccessInfo: {
+                messages: [`Your application is running here: ${utils.URL}`],
+            },
+            clearConsole: true,
+            additionalTransformers: [utils.transformer],
+            additionalFormatters: [utils.formatter],
+        })
     ],
     // server
     devServer: {
@@ -41,7 +41,7 @@ module.exports = merge(baseConfig, {
         contentBase: 'dist',
         compress: true,
         host: '0.0.0.0',  // 设置为0.0.0.0可以通过ip访问
-        port: PORT,
+        port: utils.PORT,
         // open: true,
         overlay: { warnings: false, errors: true },
         quiet: true,
