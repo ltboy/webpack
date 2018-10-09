@@ -23,16 +23,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(tsx?)|(jsx?)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'ts-loader']
+        use: [ 'babel-loader']
       },
-      {
-        test: /\.jsx?$/,
-        include: [path.resolve(__dirname, '..', 'src')],
-        loader: 'babel-loader',
-        exclude: [/node_modules/]
-      },
+      // {
+      //   test: /\.jsx?$/,
+      //   include: [path.resolve(__dirname, '..', 'src')],
+      //   loader: 'babel-loader',
+      //   exclude: [/node_modules/]
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

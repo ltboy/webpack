@@ -13,12 +13,14 @@
     "precommit-msg",
     "lint"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
     "@babel/runtime": "^7.0.0",
     "@types/node": "^10.11.3",
     "autoprefixer": "^9.1.5",
@@ -37,12 +39,11 @@
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
-    "ts-loader": "^5.2.1",
+    "terser-webpack-plugin": "^1.1.0",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.0",
     "tslint-loader": "^3.6.0",
     "typescript": "^3.1.1",
-    "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",

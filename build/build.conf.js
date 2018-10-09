@@ -3,8 +3,7 @@
 const merge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-
+const TerserPlugin  =  require('terser-webpack-plugin');
 const baseConfig = require('./base.conf.js')
 
 module.exports = merge(baseConfig, {
@@ -46,15 +45,15 @@ module.exports = merge(baseConfig, {
     },
     minimize: true,
     minimizer: [
-      new OptimizeCssAssetsPlugin(),
-      new UglifyJsPlugin({
-        uglifyOptions: {
+      new TerserPlugin({
+        terserOptions:{
           compress: {
             drop_console: true,
-            warnings: true
           }
         }
-      })
+      }  
+      ),
+      new OptimizeCssAssetsPlugin(),
     ],
     runtimeChunk: { name: 'manifest' },
   },
