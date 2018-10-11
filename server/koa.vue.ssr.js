@@ -7,10 +7,9 @@ const path = require('path');
 const LRU = require('lru-cache');
 const { createBundleRenderer } = require('vue-server-renderer');
 const isProd = process.env.NODE_ENV === 'production';
-const proxyConfig = require('../app.config').proxy;
 const setUpDevServer = require('./setup.dev.server');
 
-module.exports = function(app, uri) {
+module.exports = function (app, uri) {
   const renderData = (ctx, renderer) => {
     const context = { url: ctx.url, title: 'Vue Koa2 SSR' };
     return new Promise((resolve, reject) => {
@@ -59,13 +58,11 @@ module.exports = function(app, uri) {
     }
     );
   }
-  app.use(async(ctx, next) => {
+  app.use(async (ctx, next) => {
     if (!renderer) {
       ctx.type = 'html';
-      return ctx.body = 'waiting for compilation... refresh in a moment.';
-    }
-    if (Object.keys(proxyConfig).findIndex(vl => ctx.url.startsWith(vl)) > -1) {
-      return next();
+      ctx.body = 'waiting for compilation... refresh in a moment.';
+      return;
     }
     let html, status;
     try {

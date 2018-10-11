@@ -27,7 +27,7 @@ module.exports = function setupDevServer(app, uri, cb) {
   };
 
   //  client
-  clientConfig.entry.app = ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true', clientConfig.entry.app];
+  clientConfig.entry.app = ['webpack-hot-middleware/client', clientConfig.entry.app];
   clientConfig.output.filename = '[name].js';
   clientConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
