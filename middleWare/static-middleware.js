@@ -6,5 +6,5 @@ const path = require('path');
 const serverStatic = require('koa-static');
 
 module.exports = function () {
-  return serverStatic(path.resolve(__dirname, '..'), { maxAge: 30 * 24 * 60 * 60 * 1000, gzip: true });
+  return serverStatic(path.join(__dirname, '..'), { maxAge: 30 * 24 * 60 * 60 * 1000, gzip: true });
 };

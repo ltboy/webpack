@@ -1,6 +1,5 @@
 /**
  * koa2 server 入口
- * Created by zdliuccit on 2018/7/6.
  */
 const Koa = require('koa');
 const koaCompress = require('koa-compress')();
@@ -21,9 +20,6 @@ const app = new Koa();
 const middleWares = [
   // 压缩响应
   koaCompress,
-  // 错误处理
-  // errorMiddleware,
-  // // 静态资源中间件
   staticMiddleWare()
 ];
 middleWares.forEach((middleware) => {
@@ -35,9 +31,6 @@ middleWares.forEach((middleware) => {
 
 // vue ssr处理
 vueKoaSSR(app, uri);
-
-// http代理中间件
-// app.use(proxyMiddleWare());
 
 console.log(`\n> Starting server... ${uri} \n`);
 

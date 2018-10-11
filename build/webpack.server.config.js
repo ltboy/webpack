@@ -17,7 +17,7 @@ module.exports = merge(config, {
   devtool: '#cheap-module-source-map',
   mode: 'production',
   // 配置编译的入口文件
-  entry: path.join(process.cwd(), 'client/entry-server.js'),
+  entry: path.join(__dirname, '..', 'client/entry-server.js'),
   // 设置输出文件名，并设置模块导出为commonjs2类型
   output: {
     filename: 'server-bundle.js',

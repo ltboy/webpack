@@ -11,7 +11,7 @@ function getTitle (vm) {
 const serverTitleMixin = {
   created () {
     const title = getTitle(this);
-    if (title) this.$ssrContext.title = title || 'Vue Koa2 SSR';
+    if (title) this.$ssrContext.title = title || '网易味央';
   }
 };
 
@@ -21,7 +21,7 @@ const serverTitleMixin = {
 const clientTitleMixin = {
   mounted () {
     const title = getTitle(this);
-    if (title) document.title = title || 'Vue Koa2 SSR';
+    if (title) document.title = title || '网易味央';
   }
 };
 

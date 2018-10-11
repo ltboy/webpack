@@ -16,11 +16,11 @@ const isProd = process.env.NODE_ENV === 'production';
 const appVersion = new Date().getTime();
 
 function resolve(dir) {
-  return path.resolve(process.cwd(), dir);
+  return path.resolve(__dirname, "..", dir);
 }
 
 // 网站图标
-const favicon = path.join(process.cwd(), 'favicon.ico');
+const favicon = path.resolve(__dirname, "..", 'favicon.ico');
 
 module.exports = function () {
   const config = {
@@ -57,7 +57,7 @@ module.exports = function () {
               loaders: {
                 css: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader'],
                 stylus: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader',
-                  { loader: 'stylus-loader', options: isProd ? {} : { sourceMap: 'inline' } }
+                { loader: 'stylus-loader', options: isProd ? {} : { sourceMap: 'inline' } }
                 ]
               }
             }

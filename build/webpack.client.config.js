@@ -12,7 +12,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const config = merge(base, {
   entry: {
-    app: path.join(process.cwd(), 'client/entry-client.js'),
+    app: path.join(__dirname, "..", 'client/entry-client.js'),
   },
   mode: isProd ? 'production' : 'development',
   plugins: [
