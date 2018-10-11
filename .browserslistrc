@@ -1,8 +1,0 @@
-# 指定支持的浏览器列表
-# https://github.com/browserslist/browserslist
-# 查看支持列表 npx browserslist
-
-> 1%
-last 2 version
-ie 11
-not dead

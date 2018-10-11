@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 6
+  },
+  "extends": [
+    "standard",
+    "plugin:vue/essential"
+  ],
+  "plugins": [
+    "vue"
+  ],
+  "rules": {
+    "prefer-promise-reject-errors": 0,
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+    "space-before-function-paren": ["off","never"]
+  }
+}
