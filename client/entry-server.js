@@ -14,7 +14,6 @@ app.$mount('#app');
 
 export default context => new Promise((resolve, reject) => {
   const { app, router, store } = createApp();
-
   const { url } = context;
   const { fullPath } = router.resolve(url).route;
 
@@ -44,6 +43,7 @@ export default context => new Promise((resolve, reject) => {
       // 当我们将状态附加到上下文，
       // 并且 `template` 选项用于 renderer 时，
       // 状态将自动序列化为 `window.__INITIAL_STATE__`，并注入 HTML。
+      store.commit('UPDATEPLATFORM', context.platform);
       context.state = store.state;
       resolve(app);
     }).catch(reject);

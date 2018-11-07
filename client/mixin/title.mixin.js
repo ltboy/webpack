@@ -1,4 +1,4 @@
-function getTitle (vm) {
+function getTitle(vm) {
   const { title } = vm.$options;
   if (title) {
     return typeof title === 'function' ? title.call(vm) : title;
@@ -9,7 +9,7 @@ function getTitle (vm) {
  * 生产环境 server处理
  */
 const serverTitleMixin = {
-  created () {
+  created() {
     const title = getTitle(this);
     if (title) this.$ssrContext.title = title || '网易味央';
   }
@@ -19,7 +19,7 @@ const serverTitleMixin = {
  * 开发环境 正常处理
  */
 const clientTitleMixin = {
-  mounted () {
+  mounted() {
     const title = getTitle(this);
     if (title) document.title = title || '网易味央';
   }

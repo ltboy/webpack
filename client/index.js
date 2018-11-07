@@ -13,6 +13,7 @@ Vue.mixin(titleMixin);
 // 导出一个工厂函数，用于创建新的
 // 应用程序、router 和 store 实例
 export function createApp() {
+  console.log();
   // 创建 router 实例
   const router = createRouter();
   // 创建 store 实力

@@ -1,12 +1,11 @@
 /**
  * koa2 server 入口
  */
+require('@babel/polyfill');
 const Koa = require('koa');
 const koaCompress = require('koa-compress')();
 
 const staticMiddleWare = require('../middleWare/static-middleware');
-// const errorMiddleware = require('../middleWare/middle/errorMiddleWare');
-// const proxyMiddleWare = require('../middleWare/middle/proxyMiddleWare');
 const vueKoaSSR = require('./koa.vue.ssr');
 
 const appConfig = require('../app.config');

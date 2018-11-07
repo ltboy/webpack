@@ -11,7 +11,19 @@ const setUpDevServer = require('./setup.dev.server');
 
 module.exports = function (app, uri) {
   const renderData = (ctx, renderer) => {
-    const context = { url: ctx.url, title: 'Vue Koa2 SSR' };
+    const UA = ctx.request.header['user-agent'];
+    let platform = 'pc';
+    if (UA.match(/Android/i) ||
+      UA.match(/webOS/i) ||
+      UA.match(/iPhone/i) ||
+      UA.match(/iPad/i) ||
+      UA.match(/iPod/i) ||
+      UA.match(/BlackBerry/i) ||
+      UA.match(/Windows Phone/i)
+    ) {
+      platform = 'mob';
+    }
+    const context = { url: ctx.url, title: '网易味央官网', platform };
     return new Promise((resolve, reject) => {
       renderer.renderToString(context, (err, html) => {
         if (err) {
@@ -61,7 +73,7 @@ module.exports = function (app, uri) {
   app.use(async (ctx, next) => {
     if (!renderer) {
       ctx.type = 'html';
-      ctx.body = 'waiting for compilation... refresh in a moment.';
+      ctx.body = '版本正在更新,请稍后重试';
       return;
     }
     let html, status;
