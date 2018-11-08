@@ -11,7 +11,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const appConfig = require('./../app.config');
 
 const isProd = process.env.NODE_ENV === 'production';
-
+console.log('dev');
 // 版本号
 const appVersion = new Date().getTime();
 
@@ -40,10 +40,11 @@ module.exports = function () {
       // 补充扩展名
       extensions: ['.js', '.vue', '.json'],
       // 别名，可以直接使用别名来代表设定的路径以及其他
-      alias: Object.assign({}, appConfig.webpack.resolveAlias, {
+      alias: {
         vue: 'vue/dist/vue.esm.js',
-        '@': resolve('client')
-      })
+        '@': resolve('client'),
+        '~': resolve('client')
+      }
     },
     module: {
       rules: [{
@@ -81,10 +82,10 @@ module.exports = function () {
         test: /\.(scss|sass)$/,
         use: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       },
-      {
-        test: /\.json$/,
-        use: 'json-loader'
-      },
+      // {
+      //   test: /\.json$/,
+      //   loader: 'json-loader'
+      // },
       // 图片资源 gif|jpg|jpeg|png|bmp|svg|ico
       {
         test: /\.(gif|jpg|jpeg|png|bmp|svg|ico)(\?.*)?$/,

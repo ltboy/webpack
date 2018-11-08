@@ -1,0 +1,12 @@
+@mixin flexContainer($width:1,$height:1) {
+  &::before{
+    padding-top: 1%*100*$height/$width;
+    content: '';
+    float: left;
+  }
+  &::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

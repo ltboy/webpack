@@ -1,0 +1,18 @@
+{
+  "name": "白切肉",
+  "sub": "舌尖上的中国总顾问点赞的美味",
+  "banner": "img/cookbook/1.png",
+  "pc": [
+    "img/cookbook/bqr/1.jpg",
+    "img/cookbook/bqr/2.jpg",
+    "img/cookbook/bqr/3.jpg",
+    "img/cookbook/bqr/4.jpg"
+  ],
+  "m":[
+    "img/cookbook/rmmdntl/m-1.jpg",
+    "img/cookbook/rmmdntl/m-2.jpg",
+    "img/cookbook/rmmdntl/m-3.jpg",
+    "img/cookbook/rmmdntl/m-4.jpg",
+    "img/cookbook/rmmdntl/m-5.jpg"
+  ]
+}

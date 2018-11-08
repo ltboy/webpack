@@ -1,0 +1,19 @@
+{
+  "name": "韭黄油渣沃豆腐",
+  "sub": "咬一口软滑嫩鲜美",
+  "banner": "img/cookbook/2.png",
+  "color": true,
+  "pc": [
+    "img/cookbook/bqr/1.jpg",
+    "img/cookbook/bqr/2.jpg",
+    "img/cookbook/bqr/3.jpg",
+    "img/cookbook/bqr/4.jpg"
+  ],
+  "m":[
+    "img/cookbook/fhyzwdf/m-1.jpg",
+    "img/cookbook/fhyzwdf/m-2.jpg",
+    "img/cookbook/fhyzwdf/m-3.jpg",
+    "img/cookbook/fhyzwdf/m-4.jpg",
+    "img/cookbook/fhyzwdf/m-5.jpg"
+  ]
+}

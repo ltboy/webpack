@@ -3,16 +3,22 @@
  * Created by zdliu on 2018/7/6.
  * */
 import Vue from 'vue';
-
-import { createApp } from './index';
-import ProgressBar from './components/ProgressBar.vue';
-
-const { app, router, store } = createApp();
+import './plugins/index';
+import {
+  createApp
+} from './index';
+const {
+  app,
+  router,
+  store
+} = createApp();
 
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({
-  beforeRouteUpdate (to, from, next) {
-    const { asyncData } = this.$options;
+  beforeRouteUpdate(to, from, next) {
+    const {
+      asyncData
+    } = this.$options;
     if (asyncData) {
       asyncData({
         store: this.$store,
@@ -20,6 +26,11 @@ Vue.mixin({
       }).then(next).catch(next);
     } else {
       next();
+    }
+  },
+  computed: {
+    platform() {
+      return this.$store.getters.getPlatform;
     }
   }
 });
@@ -29,10 +40,6 @@ Vue.mixin({
 if (window.__INITIAL_STATE__) {
   store.replaceState(window.__INITIAL_STATE__);
 }
-
-// global progress bar
-const bar = Vue.prototype.$bar = new Vue(ProgressBar).$mount();
-document.body.appendChild(bar.$el);
 
 router.onReady(() => {
   router.beforeResolve((to, from, next) => {
@@ -45,10 +52,11 @@ router.onReady(() => {
       return next();
     }
 
-    bar.start();
-    Promise.all(asyncDataHooks.map(hook => hook({ store, route: to })))
+    Promise.all(asyncDataHooks.map(hook => hook({
+      store,
+      route: to
+    })))
       .then(() => {
-        bar.finish();
         next();
       })
       .catch(next);

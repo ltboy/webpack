@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const LRU = require('lru-cache');
 const { createBundleRenderer } = require('vue-server-renderer');
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV !== 'development';
 const setUpDevServer = require('./setup.dev.server');
 
 module.exports = function (app, uri) {
@@ -21,7 +21,7 @@ module.exports = function (app, uri) {
       UA.match(/BlackBerry/i) ||
       UA.match(/Windows Phone/i)
     ) {
-      platform = 'mob';
+      platform = 'mobile';
     }
     const context = { url: ctx.url, title: '网易味央官网', platform };
     return new Promise((resolve, reject) => {

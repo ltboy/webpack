@@ -1,0 +1,176 @@
+// 轮播
+
+.layout {
+  .slider-pagination {
+    position: initial;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider-item{
+    display: block;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  .slider-pagination .slider-pagination-bullet {
+    width: 4px;
+    height: 4px;
+    background-color: #c9c9c9;
+    margin: 0 11px;
+  }
+  .slider-pagination .slider-pagination-bullet-active {
+    width: 6px;
+    height: 6px;
+    background-color: #666;
+  }
+}
+
+.layout-pc {
+  .slider-pagination {
+    height: 60px;
+  }
+}
+
+.layout-mobile {
+  .slider-pagination {
+    height: 50px;
+  }
+}
+
+.figure-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  img {
+    flex-wrap: wrap;
+  }
+}
+
+//  文章
+
+.section {
+  >img {
+    width: 100%;
+  }
+}
+
+.section-alt {
+  color: #999;
+  line-height: 25px;
+
+  >div {
+    padding: 10px 0;
+    border-bottom: 1px solid #dedede;
+  }
+}
+
+.layout-pc {
+  .section-alt {
+    margin-top: 15px;
+  }
+}
+
+// 排版
+.layout-row {
+  position: relative;
+
+  .aside {
+    padding: 0 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .link {
+      font-size: 14px;
+      writing-mode: vertical-lr;
+      padding: 5px;
+      &:nth-child(n+2) {
+        margin-top: 50px;
+      }
+    }
+    .nuxt-link-active{
+      color: #000;
+    }
+  }
+
+  .main {
+    width: 100%;
+  }
+}
+
+.layout-pc {
+
+  .banner,
+  .article {
+    margin-bottom: 50px;
+  }
+
+  .layout-row {
+    .main {
+      padding-left: 210px;
+    }
+  }
+
+  .article {
+    margin-bottom: 50px;
+  }
+
+  .extra-p {
+    display: none !important;
+  }
+
+  .extra-dis {
+    display: none !important;
+  }
+
+  .section {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.layout-mobile {
+
+  .banner,
+  .article {
+    margin-bottom: 30px;
+  }
+
+  .section {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .layout-row {
+    .aside {
+      margin: 0 20px;
+    }
+
+    .main {
+      padding-left: 80px;
+    }
+  }
+
+  .extra {
+    display: none !important;
+  }
+}
+
+.icon-r {
+  background: url('../img/icon-r.png') no-repeat;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}

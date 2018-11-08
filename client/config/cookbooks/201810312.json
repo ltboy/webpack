@@ -1,0 +1,17 @@
+{
+  "name": "酸木瓜酱拌面",
+  "sub": "陈立教授监制好酱",
+  "banner": "img/cookbook/4.png",
+  "pc": [
+    "img/cookbook/bqr/1.jpg",
+    "img/cookbook/bqr/2.jpg",
+    "img/cookbook/bqr/3.jpg",
+    "img/cookbook/bqr/4.jpg"
+  ],
+  "m":[
+    "img/cookbook/smgjbm/m-1.jpg",
+    "img/cookbook/smgjbm/m-2.jpg",
+    "img/cookbook/smgjbm/m-3.jpg",
+    "img/cookbook/smgjbm/m-4.jpg"
+  ]
+}
