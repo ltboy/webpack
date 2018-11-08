@@ -10,6 +10,8 @@ const vueKoaSSR = require('./koa.vue.ssr');
 const appConfig = require('../app.config');
 
 const uri = `http://127.0.0.1:${appConfig.appPort}`;
+const time = new Date();
+console.log(`server time: ${time}`);
 const isProd = process.env.NODE_ENV !== 'development';
 // koa server
 const app = new Koa();
@@ -31,7 +33,6 @@ middleWares.forEach((middleware) => {
 vueKoaSSR(app, uri);
 
 console.log(`\n> Starting server... ${uri} \n`);
-
 // 错误处理
 app.on('error', (err) => {
   console.error('Server error: \n%s\n%s ', err.stack || '');
