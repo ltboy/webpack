@@ -11,15 +11,13 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const appConfig = require('./../app.config');
 
 const isProd = process.env.NODE_ENV === 'production';
+console.log(isProd);
 // 版本号
 const appVersion = new Date().getTime();
 
 function resolve(dir) {
   return path.resolve(__dirname, '..', dir);
 }
-
-// 网站图标
-const favicon = path.resolve(__dirname, '..', 'favicon.ico');
 
 module.exports = function () {
   const config = {
@@ -119,7 +117,6 @@ module.exports = function () {
       // // 读取HTML模板文件，并输出HTML文件，开发环境实际输出到内存中
       new HtmlWebpackPlugin({
         appVersion,
-        favicon,
         filename: 'index.html',
         template: path.resolve(__dirname, '..', 'index.template.ejs'),
         inject: !isProd

@@ -6,9 +6,6 @@ const path = require('path');
 const MFS = require('memory-fs');
 const webpack = require('webpack');
 const serverConfig = require('../build/webpack.server.config');
-// const webpackDevMiddleware = require('koa-webpack-dev-middleware')
-// const webpackHotMiddleware = require('koa-webpack-hot-middleware')
-// const convert = require('koa-convert')
 const { devMiddleware, hotMiddleware } = require('koa-webpack-middleware');
 const clientConfig = require('../build/webpack.client.config');
 
