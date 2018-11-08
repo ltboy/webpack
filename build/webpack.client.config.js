@@ -12,16 +12,16 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const config = merge(base, {
   entry: {
-    app: path.join(__dirname, "..", 'client/entry-client.js'),
+    app: path.join(__dirname, '..', 'client/entry-client.js')
   },
   mode: isProd ? 'production' : 'development',
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-      'process.env.VUE_ENV': '"client"',
+      'process.env.VUE_ENV': '"client"'
     }),
-    new VueSSRClientPlugin(),
-  ],
+    new VueSSRClientPlugin()
+  ]
 });
 
 module.exports = config;

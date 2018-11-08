@@ -16,11 +16,11 @@ const isProd = process.env.NODE_ENV === 'production';
 const appVersion = new Date().getTime();
 
 function resolve(dir) {
-  return path.resolve(__dirname, "..", dir);
+  return path.resolve(__dirname, '..', dir);
 }
 
 // 网站图标
-const favicon = path.resolve(__dirname, "..", 'favicon.ico');
+const favicon = path.resolve(__dirname, '..', 'favicon.ico');
 
 module.exports = function () {
   const config = {
@@ -46,66 +46,69 @@ module.exports = function () {
       })
     },
     module: {
-      rules: [
-        {
-          test: /\.vue$/,
-          use: [{
-            loader: 'vue-loader',
-            options: {
-              // 去除模板中的空格
-              preserveWhitespace: false,
-              loaders: {
-                css: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader'],
-                stylus: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader',
-                { loader: 'stylus-loader', options: isProd ? {} : { sourceMap: 'inline' } }
-                ]
-              }
+      rules: [{
+        test: /\.vue$/,
+        use: [{
+          loader: 'vue-loader',
+          options: {
+            // 去除模板中的空格
+            preserveWhitespace: false,
+            loaders: {
+              css: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader'],
+              stylus: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader',
+                {
+                  loader: 'stylus-loader',
+                  options: isProd ? {} : {
+                    sourceMap: 'inline'
+                  }
+                }
+              ]
             }
-          }, 'eslint-loader']
-        },
-        // js,jsx 转译
-        {
-          test: /\.(js|jsx)$/,
-          use: ['babel-loader'],
-          exclude: /node_modules/
-        },
-        {
-          test: /\.css$/,
-          use: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader']
-        },
-        {
-          test: /\.(scss|sass)$/,
-          use: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader'
-          ]
-        },
-        {
-          test: /\.json$/,
-          use: 'json-loader'
-        },
-        // 图片资源 gif|jpg|jpeg|png|bmp|svg|ico
-        {
-          test: /\.(gif|jpg|jpeg|png|bmp|svg|ico)(\?.*)?$/,
-          use: [{
-            loader: 'url-loader',
-            options: {
-              limit: 1,
-              name: 'assets/images/[name].[hash:8].[ext]'
-            }
-          }]
-        },
-        // 字体文件 woff|woff2|eot|ttf
-        {
-          test: /\.(woff|woff2|eot|ttf)(\?.*)?$/,
-          use: [{
-            loader: 'url-loader',
-            options: {
-              // 小于8912字节的文件,返回dataurl
-              limit: 8912,
-              // 生成的文件名,[name]为原始文件名,[hash:8]为根据文件内容生成8位md5值,[ext]为原始文件扩展名
-              name: 'assets/font/[name].[hash:8].[ext]'
-            }
-          }]
-        }
+          }
+        }, 'eslint-loader']
+      },
+      // js,jsx 转译
+      {
+        test: /\.(js|jsx)$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.(scss|sass)$/,
+        use: [isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+      },
+      {
+        test: /\.json$/,
+        use: 'json-loader'
+      },
+      // 图片资源 gif|jpg|jpeg|png|bmp|svg|ico
+      {
+        test: /\.(gif|jpg|jpeg|png|bmp|svg|ico)(\?.*)?$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 1,
+            name: 'assets/images/[name].[hash:8].[ext]'
+          }
+        }]
+      },
+      // 字体文件 woff|woff2|eot|ttf
+      {
+        test: /\.(woff|woff2|eot|ttf)(\?.*)?$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            // 小于8912字节的文件,返回dataurl
+            limit: 8912,
+            // 生成的文件名,[name]为原始文件名,[hash:8]为根据文件内容生成8位md5值,[ext]为原始文件扩展名
+            name: 'assets/font/[name].[hash:8].[ext]'
+          }
+        }]
+      }
       ].concat(appConfig.webpack.rules || [])
     },
     performance: {
@@ -138,15 +141,15 @@ module.exports = function () {
       new webpack.optimize.MinChunkSizePlugin({
         minChunkSize: 20000
       }),
-      new OptimizeCssAssetsPlugin(
-        {
-          cssProcessorOptions: {
-            // postcss那边已经处理过autoprefixer了，这里把它关掉，否则会导致浏览器前缀兼容范围问题
-            autoprefixer: false,
-            discardComments: { removeAll: true }
+      new OptimizeCssAssetsPlugin({
+        cssProcessorOptions: {
+          // postcss那边已经处理过autoprefixer了，这里把它关掉，否则会导致浏览器前缀兼容范围问题
+          autoprefixer: false,
+          discardComments: {
+            removeAll: true
           }
         }
-      )
+      })
     ]);
   }
   return config;
