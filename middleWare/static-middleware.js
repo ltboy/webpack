@@ -3,11 +3,13 @@
  * @return {Promise.<void>}
  */
 const path = require('path');
-const serverStatic = require('koa-static');
+const serverStatic = require('koa-static-plus');
 
-module.exports = function () {
-  return serverStatic(path.join(__dirname, '..', 'static'), {
+module.exports = function (filename) {
+  console.log(path.join(__dirname, '..', filename));
+  return serverStatic(path.join(__dirname, '..', filename), {
     maxAge: 30 * 24 * 60 * 60 * 1000,
-    gzip: true
+    gzip: true,
+    pathPrefix: '/static'
   });
 };

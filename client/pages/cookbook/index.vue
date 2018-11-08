@@ -93,7 +93,7 @@ export default {
       display: inline-block;
       width: 20px;
       height: 20px;
-      background: url('~assets/img/icon.png') no-repeat, #efefef;
+      background: url('../../assets/img/icon.png') no-repeat, #efefef;
       background-position: center center;
       border-radius: 50%;
       opacity: 0.6;

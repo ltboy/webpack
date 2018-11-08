@@ -1,13 +1,11 @@
 <template>
   <div class="page">
     <div class="pc-banner" style="width:100%">
-      <no-ssr>
-        <slider autoplay>
-          <slideritem v-for="(item, index) in slider" :key="index">
-            <img v-cdn-src="item" class="slider" style="width:100%" width="100" />
-          </slideritem>
-        </slider>
-      </no-ssr>
+      <slider autoplay>
+        <slideritem v-for="(item, index) in slider" :key="index">
+          <img v-cdn-src="item" class="slider" style="width:100%" width="100" />
+        </slideritem>
+      </slider>
     </div>
     <div v-once class="layout-main">
       <!-- 菜谱推荐 -->
@@ -256,12 +254,12 @@ export default {
     &::after {
       content: '';
       display: block;
-      background: url('~assets/img/icon.png') no-repeat, #efefef;
+      background: url('../assets/img/icon.png') no-repeat, #efefef;
       background-position: center center;
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      opacity: .6;
+      opacity: 0.6;
     }
     .tit {
       color: #fff;
@@ -282,7 +280,7 @@ export default {
   display: block;
   width: 31px;
   height: 19px;
-  background: url('~assets/img/more.png') no-repeat;
+  background: url('../assets/img/more.png') no-repeat;
   background-position: 0 bottom;
   margin: 0;
   padding: 0;
@@ -298,7 +296,7 @@ export default {
   transition: all 0.3s ease;
   width: 140px;
   height: 30px;
-  background-image: url('~assets/img/icon.png');
+  background-image: url('../assets/img/icon.png');
   background-repeat: no-repeat;
   background-size: 12px 5px;
   background-position-x: -20px;
@@ -484,7 +482,7 @@ export default {
   }
 }
 .layout-mobile {
-  p{
+  p {
     line-height: 18px;
   }
   .cookie {
@@ -549,8 +547,8 @@ export default {
   .more {
     margin-top: 10px;
   }
-  .product-item-1{
-    h4{
+  .product-item-1 {
+    h4 {
       margin-bottom: 10px;
     }
   }

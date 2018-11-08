@@ -3,7 +3,7 @@
     <div class="top-bar layout-main">
       <h1 class="logo">
         <router-link to="/">
-          <img src="//agtech-img.nos-eastchina1.126.net/weiyang_web/img/logo.png" alt="网易味央" />
+          <img v-cdn-src="'img/logo.png'" alt="网易味央" />
         </router-link>
       </h1>
       <div class="menu-icon" @click="menu">
@@ -13,7 +13,7 @@
     <div class="nav-content">
       <h1 class="logo">
         <router-link to="/" @click="menu">
-          <img src="//agtech-img.nos-eastchina1.126.net/weiyang_web/img/logo.png" alt="网易味央" style="width:72px;" />
+          <img v-cdn-src="'img/logo.png'" alt="网易味央" style="width:72px;" />
         </router-link>
       </h1>
       <div class="empty"></div>

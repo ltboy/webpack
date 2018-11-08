@@ -11,7 +11,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const appConfig = require('./../app.config');
 
 const isProd = process.env.NODE_ENV === 'production';
-console.log('dev');
 // 版本号
 const appVersion = new Date().getTime();
 
@@ -30,10 +29,10 @@ module.exports = function () {
       // 输出到这个目录下
       path: resolve('dist'),
       // 生成的文件名, [name] 即为entry配置中的key
-      filename: '[name].[chunkhash:8].js',
+      filename: 'static/js/[name].[chunkhash:8].js',
       // 异步模块文件名
-      chunkFilename: '[id].js',
-      publicPath: '/dist/'
+      chunkFilename: 'static/js/[name][chunkhash:8].js',
+      publicPath: '/'
     },
     // 寻找模块时的一些缺省设置
     resolve: {
@@ -93,7 +92,7 @@ module.exports = function () {
           loader: 'url-loader',
           options: {
             limit: 1,
-            name: 'assets/images/[name].[hash:8].[ext]'
+            name: 'static/assets/images/[name].[hash:8].[ext]'
           }
         }]
       },
@@ -106,7 +105,7 @@ module.exports = function () {
             // 小于8912字节的文件,返回dataurl
             limit: 8912,
             // 生成的文件名,[name]为原始文件名,[hash:8]为根据文件内容生成8位md5值,[ext]为原始文件扩展名
-            name: 'assets/font/[name].[hash:8].[ext]'
+            name: 'static/assets/font/[name].[hash:8].[ext]'
           }
         }]
       }
@@ -135,8 +134,8 @@ module.exports = function () {
     config.plugins = (config.plugins || []).concat([
       // 分离css文件
       new MiniCssExtractPlugin({
-        filename: 'assets/style/[name][contenthash:6].css',
-        chunkFilename: 'assets/style/[name][contenthash:6].css'
+        filename: 'static/assets/style/[name][contenthash:6].css',
+        chunkFilename: 'static/assets/style/[name][contenthash:6].css'
       }),
       // 限制文件最小KB
       new webpack.optimize.MinChunkSizePlugin({

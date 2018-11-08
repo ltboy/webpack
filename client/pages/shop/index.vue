@@ -87,7 +87,7 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      background-image: url('~assets/img/icon.png');
+      background-image: url('../../assets/img/icon.png');
       background-color: #ddd;
       background-repeat: no-repeat;
       background-position: center center;
@@ -131,13 +131,13 @@ export default {
     position: relative;
     width: 100%;
     &::before {
-      background-image: url('~assets/img/icon-address.png');
+      background-image: url('../../assets/img/icon-address.png');
     }
   }
   .tel {
     position: relative;
     &::before {
-      background-image: url('~assets/img/icon-tel.png');
+      background-image: url('../../assets/img/icon-tel.png');
     }
   }
   .tel::before,

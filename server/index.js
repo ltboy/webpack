@@ -11,15 +11,16 @@ const vueKoaSSR = require('./koa.vue.ssr');
 const appConfig = require('../app.config');
 
 const uri = `http://127.0.0.1:${appConfig.appPort}`;
-
+const isProd = process.env.NODE_ENV !== 'development';
 // koa server
+console.log(isProd);
 const app = new Koa();
-
+let filename = isProd ? 'dist/static' : 'static';
 // 中间件,
-const middleWares = [
+let middleWares = [
   // 压缩响应
   koaCompress,
-  staticMiddleWare()
+  staticMiddleWare(filename)
 ];
 middleWares.forEach((middleware) => {
   if (!middleware) {
