@@ -6,7 +6,7 @@ import Product from './pages/product';
 import CookBook from './pages/cookbook/index';
 import CookBookDetail from './pages/cookbook/detail';
 import Shop from './pages/shop/index';
-import Pigpa from './pages/shop/Pigpa';
+import Pigpa from './pages/shop/pigpa';
 import News from './pages/news/index';
 import NewsDetail from './pages/news/detail/index';
 const routes = [{
