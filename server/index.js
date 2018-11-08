@@ -1,7 +1,6 @@
 /**
  * koa2 server 入口
  */
-require('@babel/polyfill');
 const Koa = require('koa');
 const koaCompress = require('koa-compress')();
 
@@ -13,7 +12,6 @@ const appConfig = require('../app.config');
 const uri = `http://127.0.0.1:${appConfig.appPort}`;
 const isProd = process.env.NODE_ENV !== 'development';
 // koa server
-console.log(isProd);
 const app = new Koa();
 let filename = isProd ? 'dist/static' : 'static';
 // 中间件,

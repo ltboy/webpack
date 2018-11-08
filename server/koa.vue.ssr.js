@@ -10,6 +10,8 @@ const {
 } = require('vue-server-renderer');
 const isProd = process.env.NODE_ENV !== 'development';
 const setUpDevServer = require('./setup.dev.server');
+let esAsync = require('es5-async-await/async');
+var esAwait = require('es5-async-await/await');
 
 module.exports = function (app, uri) {
   const renderData = (ctx, renderer) => {
@@ -75,16 +77,16 @@ module.exports = function (app, uri) {
       }
     });
   }
-  app.use(async (ctx, next) => {
+  app.use(esAsync((ctx, next) => {
     if (!renderer) {
       ctx.type = 'html';
-      ctx.body = '版本正在更新,请稍后重试1';
+      ctx.body = '版本正在更新,请稍后重试11';
       return;
     }
     let html, status;
     try {
       status = 200;
-      html = await renderData(ctx, renderer);
+      html = esAwait(renderData(ctx, renderer));
     } catch (e) {
       console.log('\n ERROR:', e);
       if (e.code === 404) {
@@ -98,5 +100,5 @@ module.exports = function (app, uri) {
     ctx.type = 'html';
     ctx.status = status || ctx.status;
     ctx.body = html;
-  });
+  }));
 };
