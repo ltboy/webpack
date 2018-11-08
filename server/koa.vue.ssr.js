@@ -5,7 +5,9 @@
 const fs = require('fs');
 const path = require('path');
 const LRU = require('lru-cache');
-const { createBundleRenderer } = require('vue-server-renderer');
+const {
+  createBundleRenderer
+} = require('vue-server-renderer');
 const isProd = process.env.NODE_ENV !== 'development';
 const setUpDevServer = require('./setup.dev.server');
 
@@ -23,7 +25,11 @@ module.exports = function (app, uri) {
     ) {
       platform = 'mobile';
     }
-    const context = { url: ctx.url, title: '网易味央官网', platform };
+    const context = {
+      url: ctx.url,
+      title: '网易味央官网',
+      platform
+    };
     return new Promise((resolve, reject) => {
       renderer.renderToString(context, (err, html) => {
         if (err) {
@@ -46,7 +52,7 @@ module.exports = function (app, uri) {
   }
 
   function resolve(dir) {
-    return path.resolve(process.cwd(), dir);
+    return path.resolve(__dirname, '..', dir);
   }
 
   let renderer;
@@ -67,13 +73,12 @@ module.exports = function (app, uri) {
       } catch (e) {
         console.log('\nbundle error', e);
       }
-    }
-    );
+    });
   }
   app.use(async (ctx, next) => {
     if (!renderer) {
       ctx.type = 'html';
-      ctx.body = '版本正在更新,请稍后重试';
+      ctx.body = '版本正在更新,请稍后重试1';
       return;
     }
     let html, status;
