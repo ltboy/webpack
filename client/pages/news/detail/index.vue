@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page article">
     <h3 v-if="article.title" class="title">{{ article.title }}</h3>
     <!-- <div class="top page-motto section">
       <img v-cdn-src="'img/avatars.png'" class="avatars" />

@@ -246,6 +246,9 @@ h4 {
   justify-content: space-between;
 }
 .layout-pc {
+  .layout-row .main{
+    padding-left: 220px;
+  }
   .block-position {
     position: relative;
     .content {

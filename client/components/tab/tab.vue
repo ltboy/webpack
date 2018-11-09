@@ -36,8 +36,13 @@ export default {
       if (index === -1) {
         return;
       }
+      console.log(index);
       if (this.selectedIndex !== -1) {
         this.tabPanes[this.selectedIndex].deActivated();
+      }
+      if (index === this.selectedIndex) {
+        this.selectedIndex = -1;
+        return;
       }
       this.selectedIndex = index;
       this.tabPanes[index].onActivated(index);

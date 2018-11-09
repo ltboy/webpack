@@ -17,18 +17,16 @@
         <div class="recommend-com layout-main">
           <div v-for="(item, i) in recommend.list" :key="i" class="recomend-item">
             <img v-cdn-src="item.img" :alt="item.title">
-            <div class="recommend-msg">
-              <div class="recommend-msg-order ff-suk">{{ item.order }}</div>
-              <router-link :to="item.url">
+            <router-link :to="item.url">
+              <div class="recommend-msg">
+                <div class="recommend-msg-order ff-suk">{{ item.order }}</div>
                 <h4 class="recommend-msg-title">{{ item.title }}</h4>
-              </router-link>
-              <p class="recommend-msg-intro extra">{{ item.intro }}</p>
-              <router-link :to="item.url">
+                <p class="recommend-msg-intro extra">{{ item.intro }}</p>
                 <div class="more">
                   <span style="color:#fff;">MORE</span>
                 </div>
-              </router-link>
-            </div>
+              </div>
+            </router-link>
           </div>
         </div>
         <div class="recommend-more layout-main">
@@ -49,20 +47,20 @@
       <!-- 资讯 -->
       <div class="news-slider">
         <m-title v-if="platform!=='pc'" title="味央资讯" link="/news" sub="NEWS" style="margin-top:15px;padding-right:15px" />
-          <slider ref="newsSlider" :options="newsoption">
-            <slideritem v-for="(item, index) in newsList" :key="index" class="news-slider-item">
-              <div class="react-box">
-                <router-link :to="'/news/detail/'+item.id" class="no-drag">
-                  <img v-cdn-src="item.img||newsDefault" class="slider" />
-                </router-link>
-              </div>
-              <div class="msg">
-                <h4 v-if="platform=='pc'">味央资讯</h4>
-                <p v-if="platform=='mobile'" class="date">{{ item.date }}</p>
-                <p class="ell">{{ item.title }}</p>
-              </div>
-            </slideritem>
-          </slider>
+        <slider ref="newsSlider" :options="newsoption" tabindex="0">
+          <slideritem v-for="(item, index) in newsList" :key="index" class="news-slider-item">
+            <div class="react-box">
+              <router-link :to="'/news/detail/'+item.id" class="no-drag">
+                <img v-cdn-src="item.img||newsDefault" class="slider" />
+              </router-link>
+            </div>
+            <div class="msg">
+              <h4 v-if="platform=='pc'">味央资讯</h4>
+              <p v-if="platform=='mobile'" class="date">{{ item.date }}</p>
+              <p class="ell">{{ item.title }}</p>
+            </div>
+          </slideritem>
+        </slider>
 
         <div v-if="platform=='pc'" class="action">
           <i class="pre" @click="slider(-1)"></i>
@@ -75,15 +73,15 @@
 <script>
 import config from '@/config/index.config';
 import newsList from '@/config/news.config';
-import MTitle from '@/components/index/title';
+import MTitle from './title';
 let newsLength = 4;
 export default {
   components: {
     MTitle,
     cCookbook: () =>
-      import(/* webpackChunkName: "pc-com" */ '@/components/index/cookbook/cookbook'),
+      import(/* webpackChunkName: "pc-com" */ './cookbook/cookbook'),
     mCookbook: () =>
-      import(/* webpackChunkName: "m-com" */ '@/components/index/cookbook/cookbook-m')
+      import(/* webpackChunkName: "m-com" */ './cookbook/cookbook-m')
   },
   data() {
     return {
@@ -91,7 +89,8 @@ export default {
       newsDefault: newsList.default,
       newsoption: {
         pagination: false,
-        loop: true
+        loop: true,
+        autoplay: 5000
       }
     };
   },
@@ -117,7 +116,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '../assets/style/mixin.scss';
+@import '../../assets/style/mixin.scss';
 // 介绍
 .recommend-wrap {
   background: #f7f7f7;
@@ -179,7 +178,7 @@ export default {
   transition: all 0.3s ease;
   width: 140px;
   height: 35px;
-  background-image: url('../assets/img/icon.png');
+  background-image: url('../../assets/img/icon.png');
   background-repeat: no-repeat;
   background-size: 12px 5px;
   background-position-x: -20px;
@@ -209,7 +208,7 @@ export default {
     height: 20px;
     cursor: pointer;
     padding: 10px;
-    background: url('../assets/img/icon-right.png') no-repeat;
+    background: url('../../assets/img/icon-right.png') no-repeat;
     background-position: center center;
     position: absolute;
     z-index: 10000;
@@ -263,6 +262,8 @@ export default {
     width: 78px;
     height: 78px;
     border-radius: 50%;
+    font-size: 18px;
+    line-height: 20px;
   }
   .more-item {
     cursor: pointer;

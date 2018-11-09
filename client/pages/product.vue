@@ -13,7 +13,7 @@
         <div class="cookie">
           <div class="aside-tit">
             <h4 class="tit">{{ cookbook.title }}</h4>
-            <div class="sup-tit">{{ cookbook.suptitle }}</div>
+            <div class="sup-tit light">{{ cookbook.suptitle }}</div>
           </div>
           <img v-cdn-src="cookbook.src" alt="">
         </div>
@@ -21,9 +21,9 @@
       <div class="product-item-1 product-item mt50">
         <div class="top">
           <div class="msg">
-            <h4>{{ product[0].tit }}</h4>
+            <h4 class="light">{{ product[0].tit }}</h4>
             <div class="not-p">
-              <p v-html="product[0].supTit"></p>
+              <p class="light" v-html="product[0].supTit"></p>
             </div>
           </div>
           <a :href="product[0].href" class="link-block" target="_blank">
@@ -31,7 +31,7 @@
               <img v-cdn-src="product[0].img" :alt="product[0].tit" class="img-lg">
               <div class="toast not-p">
                 <p>{{ product[0].tit }}</p>
-                <div class="action-sm">立即购买</div>
+                <button class="action-sm">立即购买</button>
               </div>
             </div>
           </a>
@@ -42,7 +42,7 @@
               <img v-cdn-src="item.src" :alt="product[0].tit">
               <div class="toast not-p">
                 <p>{{ product[0].tit }}</p>
-                <div class="action-sm">立即购买</div>
+                <button class="action-sm">立即购买</button>
               </div>
             </div>
           </a>
@@ -57,9 +57,9 @@
       <div class="product-item-2 product-item mt50">
         <div class="top">
           <div class="msg">
-            <h4>{{ product[1].tit }}</h4>
+            <h4 class="thin">{{ product[1].tit }}</h4>
             <div class="not-p mt10">
-              <p v-html="product[1].supTit"></p>
+              <p class="article" v-html="product[1].supTit"></p>
             </div>
           </div>
           <a :href="product[1].href" class="extra">
@@ -74,7 +74,7 @@
               <img v-cdn-src="item.src">
               <div class="toast not-p">
                 <p>{{ product[1].tit }}</p>
-                <div class="action-sm">立即购买</div>
+                <button class="action-sm">立即购买</button>
               </div>
             </div>
           </a>
@@ -106,7 +106,7 @@
               <img v-cdn-src="item.src">
               <div class="toast not-p">
                 <p>{{ product[2].tit }}</p>
-                <div class="action-sm">立即购买</div>
+                <button class="action-sm">立即购买</button>
               </div>
             </div>
           </a>
@@ -138,7 +138,7 @@
               <img v-cdn-src="item.src">
               <div class="toast not-p">
                 <p>{{ product[3].tit }}</p>
-                <div class="action-sm">立即购买</div>
+                <button class="action-sm">立即购买</button>
               </div>
             </div>
           </a>
@@ -362,6 +362,8 @@ export default {
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
+    opacity: 0.6;
+    cursor: pointer;
     .action-sm {
       margin: 5px auto 0;
       height: 16px;
@@ -369,7 +371,14 @@ export default {
       border-radius: 20px;
       border: 1px solid #999;
       font-size: 12px;
-      line-height: 14px;
+      line-height: 13px;
+      background: #fff;
+      cursor: pointer;
+    }
+    p {
+      letter-spacing: 2px;
+      line-height: 20px;
+      color: #222;
     }
   }
   &:hover {

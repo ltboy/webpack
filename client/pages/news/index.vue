@@ -75,7 +75,9 @@ export default {
   computed: {
     newslist() {
       let length =
-        this.page * max < config.map.length ? this.page * max : config.map.length;
+        this.page * max < config.map.length
+          ? this.page * max
+          : config.map.length;
       return config.map.slice(1, length + 1);
     },
     hasNext() {
@@ -115,7 +117,7 @@ export default {
       letter-spacing: 2px;
     }
   }
-  img{
+  img {
     width: 100%;
     height: 440px;
   }
@@ -221,15 +223,13 @@ export default {
     padding: 15px;
   }
   .news-item {
-    &:nth-child(n+2){
-      margin-top: 20px;
-    }
+    margin-bottom: 20px;
     .aside {
       img {
         width: 100%;
       }
     }
-    .btn{
+    .btn {
       margin-top: 10px;
     }
     .section {

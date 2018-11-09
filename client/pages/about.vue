@@ -21,7 +21,7 @@
         </ul>
       </div>
       <div class="main article">
-        <div id="section-1" class="section">
+        <div id="section-1" class="section article">
           <h4>公司简介</h4>
           <p>网易味央，是网易旗下农业品牌，专注于提供高品质肉类生产及行业解决方案，通过创新技术引领现代农业革新，为中国消费者提供安全、美味的优质食品。</p>
           <p>网易味央将互联网思维根植现代农业，创造性地为食品安全、农业生产模式输出等问题带来全新解决思路。在满足大众及专业市场需求的同时，让国人安心共享更高品质的生活。</p>
@@ -42,20 +42,20 @@
             </div>
             <div style="width:15px;background:#fff;height:100%;" class="extra-p"></div>
           </div>
-          <p v-for="(item, i) in timeline" :key="i">{{ item }}</p>
+          <p class="article" v-for="(item, i) in timeline" :key="i">{{ item }}</p>
         </div>
-        <div id="section-3" class="section">
+        <div id="section-3" class="section article">
           <h4>联系我们</h4>
           <p>我们秉承网易一贯严谨态度，致力于探索一条开放创新、持续友好的科学农业道路，为国人创造安心分享的品质生活。</p>
+          <p>浙江味央科技有限公司</p>
           <div class="not-p">
-            <p>浙江味央科技有限公司</p>
             <p>地址：浙江省杭州市滨江区网商路599号</p>
             <p>区邮政编码：310052</p>
             <p>咨询热线：400-6805-163</p>
             <p>服务时间：9:30-18:30（节假日除外）</p>
           </div>
+          <p>品牌合作：hzwangming1@corp.netease.com</p>
           <div class="not-p">
-            <p>品牌合作：hzwangming1@corp.netease.com</p>
             <p>媒体垂询：hzwangming1@corp.netease.com</p>
           </div>
         </div>

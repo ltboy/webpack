@@ -3,10 +3,10 @@
     <h4 class="center">猪爸餐厅介绍</h4>
     <div class="page-motto section">
       <img v-cdn-src="'img/pigpa/logo.png'" class="avatars" />
-      <p class="source">关于猪爸</p>
+      <p class="source light">关于猪爸</p>
       <p class="motto">高端猪肉体验店<br />美食APP热门排行榜餐厅</p>
     </div>
-    <div class="section">
+    <div class="section article">
       <p>“猪爸”餐厅是网易味央与外婆家餐饮集团联合打造的高端猪肉体验店，也是中国首家高端猪肉体验店。餐厅设计讲究，装修风格质感十足。</p>
       <p>餐厅的招牌红烧肉、美颜脚圈、豆腐白切肉等招牌菜，将网易味央黑猪肉儒糯、胶质丰富、味道鲜美等特点最大程度的展现给食客。</p>
       <p>凭借创新的料理方式以及独特的风味口感，“猪爸”餐厅迅速在美食APP的热门餐厅排行中名列前茅，深受吃货们的好评，成为杭城的新一代网红餐厅。</p>
@@ -24,10 +24,9 @@
 </template>
 <style lang="scss" scoped>
 .page-motto {
-  background: #f7f7ff;
+  background: #f7f7f7;
   padding: 40px 0;
   text-align: center;
-
   .avatars {
     width: 94px;
     height: 94px;

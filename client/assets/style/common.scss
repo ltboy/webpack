@@ -98,7 +98,7 @@
         margin-top: 50px;
       }
     }
-    .nuxt-link-active{
+    .router-link-active{
       color: #000;
     }
   }
@@ -110,21 +110,14 @@
 
 .layout-pc {
 
-  .banner,
-  .article {
+  .banner {
     margin-bottom: 50px;
   }
-
   .layout-row {
     .main {
-      padding-left: 210px;
+      padding-left: 190px;
     }
   }
-
-  .article {
-    margin-bottom: 50px;
-  }
-
   .extra-p {
     display: none !important;
   }
@@ -142,8 +135,7 @@
 
 .layout-mobile {
 
-  .banner,
-  .article {
+  .banner{
     margin-bottom: 30px;
   }
 

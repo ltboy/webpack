@@ -1,7 +1,7 @@
 export default {
   banner: {
     options: {
-      autoplay: 4000
+      autoplay: 5000
     },
     slider: {
       pc: [{

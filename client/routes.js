@@ -1,4 +1,4 @@
-import Index from './pages/index';
+import Index from './pages/index/index';
 import About from './pages/about';
 import Brand from './pages/brand';
 import Farm from './pages/farm';
@@ -56,7 +56,7 @@ const routes = [{
   component: News,
   name: 'news'
 }, {
-  path: 'news/detail/:id',
+  path: '/news/detail/:id',
   component: NewsDetail,
   name: 'newsDetail'
 }

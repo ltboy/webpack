@@ -1,7 +1,7 @@
 <template>
   <div class="cookbook">
     <m-title title="美味猪肉" link="/cookbook" sub="COOKBOOK" class="mt50" />
-      <slider :options="option">
+      <slider :options="option" tabindex="0">
         <slideritem v-for="item in config" :key="item.id" class="news-slider-item">
           <div class="react-box">
             <router-link v-for="(asset,i) in item.assets" :key="i" :to="'/cookbook/detail/'+item.name" class="no-drag link-block">
@@ -12,7 +12,6 @@
         </slideritem>
       </slider>
   </div>
-
 </template>
 
 <script>
@@ -26,7 +25,8 @@ export default {
     return {
       config,
       option: {
-        loop: true
+        loop: true,
+        autoplay: 5000
       }
     };
   }

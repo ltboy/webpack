@@ -10,6 +10,7 @@
         <span class="i"></span>
       </div>
     </div>
+    <div v-if="$route.name!='index'" style="height:44px;background:#fff"></div>
     <div class="nav-content">
       <h1 class="logo">
         <router-link to="/" @click="menu">

@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh_CN">
+
 <head>
   <title>网易味央</title>
   <meta charset="UTF-8">
-  <meta name="renderer" content="webkit"/>
+  <meta name="renderer" content="webkit" />
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta http-equiv="cache-control" content="max-age=0"/>
-  <meta http-equiv="cache-control" content="no-cache"/>
-  <meta http-equiv="pragma" content="no-cache"/>
-  <meta http-equiv="expires" content="0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
   <meta name="app-version" content="<%= htmlWebpackPlugin.options.appVersion %>">
-  <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no"/>
-  <meta name="format-detection" content="address=no"/>
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="address=no" />
   <meta name="keywords" content="网易味央官网,网易味央黑猪肉【慢养300天，安心每一口】">
   <meta name="description" content="网易味央,是网易旗下互联网+农业品牌,专注于提供高品质肉类生产及行业解决方案,通过创新技术引领现代农业革新,为中国消费者提供安全,美味的优质食品.">
   <link rel="shortcut icon" href="//weiyang.nos-eastchina1.126.net/favicon.ico">
+  <script src="//cdn.bootcss.com/eruda/1.5.2/eruda.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/eruda-dom@1.0.1"></script>
+  <script>
+    eruda.init({});
+    eruda.add(erudaDom);
+  </script>
 </head>
+
 <body>
-<div id="app"><!--vue-ssr-outlet--></div>
+  <div id="app">
+    <!--vue-ssr-outlet-->
+  </div>
 </body>
+
 </html>
-
-

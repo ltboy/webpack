@@ -11,7 +11,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const appConfig = require('./../app.config');
 
 const isProd = process.env.NODE_ENV === 'production';
-console.log(isProd);
 // 版本号
 const appVersion = new Date().getTime();
 
@@ -30,7 +29,7 @@ module.exports = function () {
       filename: 'static/js/[name].[chunkhash:8].js',
       // 异步模块文件名
       chunkFilename: 'static/js/[name][chunkhash:8].js',
-      publicPath: '/'
+      publicPath: isProd ? '/' : '/dist/'
     },
     // 寻找模块时的一些缺省设置
     resolve: {

@@ -11,7 +11,7 @@ const {
 const isProd = process.env.NODE_ENV !== 'development';
 const setUpDevServer = require('./setup.dev.server');
 let esAsync = require('es5-async-await/async');
-var esAwait = require('es5-async-await/await');
+let esAwait = require('es5-async-await/await');
 
 module.exports = function (app, uri) {
   const renderData = (ctx, renderer) => {

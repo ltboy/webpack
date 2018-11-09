@@ -1,32 +1,56 @@
 @import './var.scss';
 
+@font-face {
+  font-family: 'PingFang-SC';
+  src: url('https://weiyang.nos-eastchina1.126.net/fonts/PingFang-SC-Regular.ttf'); //你的资源目录
+}
+@font-face{
+  font-family: 'SourceHanSerifSC';
+  src: url('https://weiyang.nos-eastchina1.126.net/fonts/SourceHanSansSC-Normal.otf'); //你的资源目录
+}
 body {
   margin: 0;
   line-height: 1;
   color: #222;
   font-family: PingFang-SC;
 }
-p{
+
+p {
   font-family: PingFang-SC;
   line-height: 25px;
+  font-weight: lighter;
 }
 
 h4 {
   font-size: 24px;
   color: #222;
   line-height: 35px;
-  font-family: SourceHanSerifSC-Regular,SourceHanSerifSC;
+  font-family: SourceHanSerifSC-Regular, SourceHanSerifSC;
 }
-strong{
+
+strong {
   color: #222;
   font-size: 1.2em
 }
-.layout-mobile{
-  h4{
+.light{
+  font-weight: lighter;
+}
+.layout-pc {
+  .article {
+    p,
+    &p {
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.layout-mobile {
+  h4 {
     font-size: 20px;
     line-height: 29px;
   }
 }
+
 .clearfl {
   &::after {
     display: block;
@@ -44,14 +68,13 @@ strong{
 .layout-pc {
   .layout-main {
     max-width: 1090px;
-    padding: 0 10px;
     margin: 0 auto;
     box-sizing: content-box;
   }
 }
 
 .layout-mobile {
-    width: 100%;
+  width: 100%;
 }
 
 .layout-wrap {
@@ -61,12 +84,15 @@ strong{
 .fs12 {
   font-size: 12px;
 }
-.ff-light{
+
+.ff-light {
   font-family: PingFang-SC-Light;
 }
-.ff-suk{
+
+.ff-suk {
   font-family: SukhumvitSet-Thin;
 }
+
 .link,
 .link-btn,
 .link-line {
@@ -80,22 +106,27 @@ strong{
   cursor: pointer;
   display: inline-block;
 }
-.link-block{
+
+.link-block {
   display: block;
 }
+
 .link:hover,
-.nuxt-link-active,
+.router-link-active,
 .link-line:hover {
   color: $color-lv-1;
 }
 
-.link-line:hover,.link-line.nuxt-link-active {
+.link-line:hover,
+.link-line.router-link-active {
   box-shadow: inset 0 -1px #222;
 }
-.fl{
+
+.fl {
   float: left;
 }
-.fr{
+
+.fr {
   float: right;
 }
 
@@ -122,7 +153,6 @@ strong{
 .btn-lg {
   width: 180px;
   height: 34px;
-  line-height: 34px;
   font-size: 14px;
   border-radius: 20px;
   border: 1px solid rgba(153, 153, 153, 1);
@@ -170,11 +200,13 @@ strong{
 .center {
   text-align: center;
 }
-.flex-center{
+
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .center-block {
   margin: 0 auto;
 }
@@ -195,9 +227,10 @@ strong{
 }
 
 // 间距
-.mt10{
+.mt10 {
   margin-top: 10px;
 }
+
 .layout-pc {
   .mt50 {
     margin-top: 50px;
@@ -206,9 +239,11 @@ strong{
   .mb50 {
     margin-bottom: 50px;
   }
+
   .pt50 {
     padding-bottom: 50px;
   }
+
   .pb50 {
     padding-top: 50px;
   }
@@ -220,6 +255,7 @@ strong{
   .mt25 {
     margin-top: 25px;
   }
+
   .mt20 {
     margin-top: 20px;
   }
@@ -237,14 +273,17 @@ strong{
   .pb50 {
     padding-bottom: 30px;
   }
+
   .pt50 {
     padding-top: 30px;
   }
+
   .mt30 {
     margin-top: 20px;
   }
 
-  .mt25,.mt20 {
+  .mt25,
+  .mt20 {
     margin-top: 10px;
   }
 }

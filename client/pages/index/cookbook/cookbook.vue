@@ -2,8 +2,10 @@
   <div v-once class="cookbook layout-main">
     <div v-for="(item,i) in config" :key="i" class="cookbook-item">
       <div class="cook-food">
-        <img v-cdn-src="item.assets[0].src" v-if="item.assets[0].type=='img'" :alt="item.name" srcset="" style="height:100%;width:350px;" />
-        <video v-cdn-src="item.assets[0].src" v-if="item.assets[0].type=='video'" :alt="item.name" srcset="" style="height:100%;width:350px;" />
+        <router-link :to="'/cookbook/detail/'+item.name">
+          <img v-cdn-src="item.assets[0].src" v-if="item.assets[0].type=='img'" :alt="item.name" srcset="" style="height:100%;width:350px;" />
+          <video v-cdn-src="item.assets[0].src" v-if="item.assets[0].type=='video'" :alt="item.name" srcset="" style="height:100%;width:350px;" />
+        </router-link>
       </div>
       <div class="cook-direction-wrap">
         <div class="cook-direction">
@@ -18,10 +20,14 @@
         </div>
       </div>
       <div class="food-material-1">
-        <img v-cdn-src="item.assets[1].src" />
+        <router-link :to="'/cookbook/detail/'+item.name">
+          <img v-cdn-src="item.assets[1].src" />
+        </router-link>
       </div>
       <div class="food-material-2">
-        <img v-cdn-src="item.assets[2].src" />
+        <router-link :to="'/cookbook/detail/'+item.name">
+          <img v-cdn-src="item.assets[2].src" />
+        </router-link>
         <div>
           <router-link to="/cookbook" class="link-btn"><button class="btn btn-default">查看更多</button></router-link>
         </div>
