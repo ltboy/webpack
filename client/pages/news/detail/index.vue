@@ -1,11 +1,11 @@
 <template>
   <div class="page article">
     <h3 v-if="article.title" class="title">{{ article.title }}</h3>
-    <!-- <div class="top page-motto section">
-      <img v-cdn-src="'img/avatars.png'" class="avatars" />
-      <p class="source">本文来源 - {{ article.source }}</p>
-      <p class="motto">"企业家最好的慈善，就是提供有品质的产品和服务。我们期待网易味央可以通过自己的技术和匠心对中国社会产生积极的影响，让国人吃到真正安心、美味的好猪肉。"</p>
-    </div> -->
+    <div class="aspect-box" aspect='900/350'>
+      <div class="aspect-box__content">
+        <img v-cdn-src="article.img" alt="" class="banner">
+      </div>
+    </div>
     <div v-for="(section,i) in article.section" :key="i" class="section">
       <h5 class="tit">{{ section.tit }}</h5>
       <p v-for="(p,j) in section.txt" :key="j">{{ p }}</p>
@@ -39,6 +39,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.banner {
+  height: 100%;
+  margin: 0 auto;
+}
+[aspect='900/350']{
+  position: relative;
+  aspect-ratio: '900:350';
+  overflow: hidden;
+}
 .title,
 .tit {
   text-align: center;

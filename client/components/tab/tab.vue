@@ -40,7 +40,7 @@ export default {
       if (this.selectedIndex !== -1) {
         this.tabPanes[this.selectedIndex].deActivated();
       }
-      if (index === this.selectedIndex) {
+      if (index === this.selectedIndex && this.platform !== 'pc') {
         this.selectedIndex = -1;
         return;
       }

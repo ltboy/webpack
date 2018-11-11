@@ -266,6 +266,7 @@ export default {
     }
     .sup-tit {
       line-height: 18px;
+      letter-spacing: 1px;
     }
   }
 }
@@ -411,7 +412,7 @@ export default {
     }
     .sup-tit {
       margin-left: 14px;
-      width: 16px;
+      writing-mode: vertical-lr;
     }
   }
   .product-item-1 {

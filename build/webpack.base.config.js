@@ -95,7 +95,7 @@ module.exports = function () {
       },
       // 字体文件 woff|woff2|eot|ttf
       {
-        test: /\.(woff|woff2|eot|ttf)(\?.*)?$/,
+        test: /\.(woff|woff2|eot|ttf|otf)(\?.*)?$/,
         use: [{
           loader: 'url-loader',
           options: {

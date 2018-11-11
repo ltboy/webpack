@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'PingFang-SC';
-  src: url('https://weiyang.nos-eastchina1.126.net/fonts/PingFang-SC-Regular.ttf'); //你的资源目录
+  src:local("PingFang-SC-Regular"), url('../fonts//PingFang-SC-Regular.ttf'); //你的资源目录
 }
 @font-face{
   font-family: 'SourceHanSerifSC';
-  src: url('https://weiyang.nos-eastchina1.126.net/fonts/SourceHanSansSC-Normal.otf'); //你的资源目录
+  src:local("SourceHanSansSC-Regular"), url('../fonts/SourceHanSansSC-Regular.ttf'); //你的资源目录
 }
 body {
   margin: 0;
@@ -308,4 +308,11 @@ p {
 
 .not-p p {
   margin: 0;
+}
+
+.subTag-verical{
+  font-size: 14px;
+  line-height: 18px;
+  color:#fff;
+  letter-spacing: 1px;
 }

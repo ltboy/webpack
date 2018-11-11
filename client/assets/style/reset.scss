@@ -149,6 +149,7 @@ textarea:focus {
 img {
   -webkit-user-drag: none;
   display: block;
+  object-fit: cover;
 }
 
 a {

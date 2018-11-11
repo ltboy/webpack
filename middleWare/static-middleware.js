@@ -10,6 +10,10 @@ module.exports = function (filename) {
   return serverStatic(path.join(__dirname, '..', filename), {
     maxAge: 30 * 24 * 60 * 60 * 1000,
     gzip: true,
-    pathPrefix: '/static'
+    pathPrefix: '/static',
+    setHeaders: (res, path) => {
+      // 'Access-Control-Allow-Origin': '*'
+      res.setHeader('Access-Control-Allow-Origin', '*');
+    }
   });
 };

@@ -1,7 +1,7 @@
 <template>
   <div :class="'layout-'+platform" class="layout">
     <navigator />
-    <router-view/>
+    <router-view />
     <com-footer />
     <div v-if="platform==='pc'" :style="{top:scanTop+'px'}" class="help-scan help extra">
       <div class="icon"></div>
@@ -79,7 +79,7 @@ export default {
       .icon {
         background-image: url('./assets/img/icon-scan-hot.png');
       }
-      .scan{
+      .scan {
         display: block;
       }
     }

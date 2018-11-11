@@ -30,7 +30,7 @@
                 <h4 v-if="platform=='pc'" v-html="'零<br/>污染</br>环保科技'"></h4>
                 <h4 v-else>零污染环保科技</h4>
                 <i v-if="platform=='pc'" class="arrow-icon" style="margin:8px 0;"></i>
-                <small class="left">WEIYAN</small>
+                <small class="left weiyang">WEIYAN</small>
               </div>
               <img v-cdn-src="'img/fram-2.png'" alt="">
               <img v-cdn-src="'img/fram-3.png'" class="mr-8" alt="">
@@ -53,7 +53,7 @@
                 <h4 v-if="platform=='pc'" v-html="'幸福<br/>养殖<br/>理念'"></h4>
                 <h4 v-else>幸福养殖理念</h4>
                 <i v-if="platform=='pc'" class="arrow-icon" style="margin:8px 0;"></i>
-                <small class="right">WEIYAN</small>
+                <small class="right weiyang">WEIYAN</small>
               </div>
             </div>
             <div class="article">
@@ -118,14 +118,6 @@ export default {
   h4 {
     font-size: 18px;
     line-height: 26px;
-  }
-  small {
-    font-size: 12px;
-    line-height: 18px;
-    transform: scale(0.5);
-    position: absolute;
-    letter-spacing: 12px;
-    font-family: SourceHanSerifSC;
   }
 }
 .tags-block {

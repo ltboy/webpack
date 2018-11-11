@@ -20,16 +20,20 @@
       </div>
       <div v-else class="news-item news-item-section">
         <div class="aside">
-          <router-link :to="'/news/detail/'+wall.id">
-            <img v-cdn-src="wall.img||defaultImg">
-          </router-link>
+          <div class="aspect-box" aspect='400/264'>
+            <div class="aspect-box__content">
+              <router-link :to="'/news/detail/'+wall.id">
+                <img v-cdn-src="wall.img||defaultImg">
+              </router-link>
+            </div>
+          </div>
         </div>
         <div class="section not-p">
           <p class="news-time">{{ wall.date }}</p>
           <router-link :to="'/news/detail/'+wall.id">
             <h4 class="news-title ell">{{ wall.title }}</h4>
           </router-link>
-          <div v-if="platform=='pc'" class="news-section">
+          <div v-if="platform=='pc'" class="news-section article">
             <p>{{ wall.paragraph||wall.section[0].txt[0] }}</p>
           </div>
           <router-link :to="'/news/detail/'+wall.id">
@@ -39,16 +43,20 @@
       </div>
       <div v-for="news in newslist" :key="news.id" class="news-item news-item-section">
         <div class="aside">
-          <router-link :to="'/news/detail/'+news.id">
-            <img v-cdn-src="news.img||defaultImg">
-          </router-link>
+          <div class="aspect-box" aspect='345:228'>
+            <div class="aspect-box__content">
+              <router-link :to="'/news/detail/'+news.id">
+                <img v-cdn-src="news.img||defaultImg">
+              </router-link>
+            </div>
+          </div>
         </div>
         <div class="section not-p">
           <p class="news-time">{{ news.date }}</p>
           <router-link :to="'/news/detail/'+news.id">
             <h4 class="news-title ell">{{ news.title }}</h4>
           </router-link>
-          <div v-if="platform=='pc'" class="news-section">
+          <div v-if="platform=='pc'" class="news-section article">
             <p>{{ news.paragraph||news.section[0].txt[0] }}</p>
           </div>
           <router-link :to="'/news/detail/'+news.id">
@@ -117,6 +125,10 @@ export default {
       letter-spacing: 2px;
     }
   }
+  .sub-tag {
+    line-height: 18px;
+    letter-spacing: 1px;
+  }
   img {
     width: 100%;
     height: 440px;
@@ -142,11 +154,10 @@ export default {
     justify-content: flex-start;
     align-items: stretch;
     .aside {
-      // width: 400px;
       flex: 0 0 400px;
       img {
-        width: 100%;
         height: 100%;
+        width: 100%;
       }
     }
     .section {
@@ -162,17 +173,17 @@ export default {
     width: 183px;
     height: 35px;
     font-size: 24px;
-    font-family: SourceHanSerifTC-SemiBold;
+    font-family: SourceHanSerifTC;
     font-weight: 600;
     color: rgba(34, 34, 34, 1);
     line-height: 35px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
   }
   .news-title {
     width: 492px;
     height: 28px;
     font-size: 20px;
-    font-family: PingFangSC-Regular;
+    font-family: PingFangSC;
     font-weight: 400;
     color: rgba(34, 34, 34, 1);
     line-height: 28px;
@@ -221,6 +232,15 @@ export default {
 .layout-mobile {
   .layout-main {
     padding: 15px;
+  }
+  [aspect='345:228'] {
+    position: relative;
+    aspect-ratio: '345:228';
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
   .news-item {
     margin-bottom: 20px;

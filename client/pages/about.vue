@@ -30,8 +30,8 @@
           <h4>发展历程</h4>
           <div class="motto-box">
             <div class="motto not-p extra">
-              <small>WEIYAN</small>
-              <h4 style="margin:7px 0">跨界七年</h4>
+              <small class="weiyang">WEIYAN</small>
+              <h4 style="margin-bottom:7px">跨界七年</h4>
               <i class="arrow-icon"></i>
               <div style="height:15px"></div>
               <p>初心不变</p>
@@ -114,7 +114,8 @@ export default {
   align-items: flex-start;
 }
 .motto {
-  padding: 185px 35px 30px 30px;
+  padding: 230px 35px 30px 30px;
+  position: relative;
   p {
     color: #999;
   }
@@ -168,7 +169,9 @@ export default {
   }
 }
 small {
-  font-size: 6px;
+  transform-origin: top left;
+  left: 30px;
+  top: 213px;
 }
 .section-3 {
   .not-p {

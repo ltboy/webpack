@@ -27,11 +27,6 @@ Vue.mixin({
     } else {
       next();
     }
-  },
-  computed: {
-    platform() {
-      return this.$store.getters.getPlatform;
-    }
   }
 });
 

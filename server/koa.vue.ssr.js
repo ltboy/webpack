@@ -32,7 +32,6 @@ module.exports = function (app, uri) {
       title: '网易味央官网',
       platform
     };
-    console.log(platform);
     return new Promise((resolve, reject) => {
       renderer.renderToString(context, (err, html) => {
         if (err) {

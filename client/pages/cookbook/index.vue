@@ -8,7 +8,7 @@
       <span>COOKBOOK</span>
     </div>
     <div v-once class="layout-main">
-      <div class="section mt60 pb50 extra">
+      <div class="section article mt60 extra">
         <p>网易味央秉承网易一贯的严谨态度，以科技养殖方式和幸福养殖理念，保障所产猪肉品质。</p>
         <p>在产品加工环节，我们在恒定低温下进行标准化屠宰分割、包装、冷链运输。为产品长效保鲜，锁住营养。</p>
         <p>在生产过程中，我们设置多个关键控制点和检验检疫关卡，实行全程质量追溯。确保每一份产品从农场到用户餐桌品质如一，安心美味。</p>
@@ -71,6 +71,7 @@ export default {
 .section {
   border-bottom: 1px solid #dedede;
   padding-left: 20px;
+  padding-bottom: 50px;
 }
 .cookbook-item {
   position: relative;
@@ -105,6 +106,7 @@ export default {
     color: #fff;
   }
   div {
+    letter-spacing: 1px;
     color: #999;
   }
   &:nth-child(even) {

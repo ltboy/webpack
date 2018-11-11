@@ -9,7 +9,10 @@ import {
 import './assets/style/index.scss';
 // config配置文件
 import titleMixin from './mixin/title.mixin';
-Vue.mixin([titleMixin]);
+import platformMixin from './mixin/platform';
+
+Vue.mixin(titleMixin);
+Vue.mixin(platformMixin);
 // 导出一个工厂函数，用于创建新的
 // 应用程序、router 和 store 实例
 export function createApp() {

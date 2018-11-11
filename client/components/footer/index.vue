@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="copy">
-          <span><em style="font-size:1.5em;vertical-align:middle">&copy; </em>2016 网易味央 浙ICP备15006614号</span><span style="padding:0 10px" /><span>浙公网安备 33052302000141号</span>
+          <span><em style="font-size:1.3em;vertical-align:middle">&copy; </em>2016 网易味央 浙ICP备15006614号</span><span style="padding:0 10px" /><span>浙公网安备 33052302000141号</span>
         </div>
         <div class="about">
           <a v-for="(item, i) in link" :key="i" :href="item.href" class="link" target="_blank">{{ item.txt }}</a>
@@ -102,6 +102,10 @@ export default {
 }
 .copy {
   color: $color-lv-2;
+  font-family: MicrosoftYaHei;
+}
+.about{
+  font-family: MicrosoftYaHei;
 }
 .about .link:nth-child(n + 2) {
   margin-left: 20px;
